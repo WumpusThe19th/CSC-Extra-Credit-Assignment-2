@@ -48,6 +48,9 @@ public class Main {
         //This loop is roughly linear in time complexity. Each item costs a loop iteration,
         //and at least 2 if statements.
         for (int item: a) {
+            if (item == 0){ //To account for any empty reallocations, and to prevent division errors.
+                continue;
+            }
             if (item < smallest2) { //If our considered element is smaller than the second smallest.
                 if (item < smallest1) {//If our considered element is smaller than the smallest.
                     System.out.println(item + " is becoming smallest 1.");
