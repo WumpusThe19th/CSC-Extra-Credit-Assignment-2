@@ -41,25 +41,33 @@ public class Main {
             cur_index++;
         }
         //We could. Theoretically. Ignore all basic practices that are smart and just do 4 for loops.
+        //Come on why is a large number first loop failing?
+        //So 9 comes in first, and because it's the largest element, it gets put at largest 1.
+        //Then 4, which goes in as largest 2.
+
         //This loop is roughly linear in time complexity. Each item costs a loop iteration,
         //and at least 2 if statements.
         for (int item: a) {
             if (item < smallest2) { //If our considered element is smaller than the second smallest.
                 if (item < smallest1) {//If our considered element is smaller than the smallest.
+                    System.out.println(item + " is becoming smallest 1.");
                     smallest2 = smallest1;
                     smallest1 = item; //Set our element to be the smallest.
                 }
                 else { //Otherwise,
+                    System.out.println(item + " is becoming smallest 2.");
                     smallest2 = item; //Set our element to be the second smallest.
                 }
             }
             //Repeat what we did for finding the smallest elements with the largest elements.
             if (item > largest2){
                 if (item > largest1) {
+                    System.out.println(item + " is becoming largest 1.");
                     largest2 = largest1;
                     largest1 = item;
                 }
                 else {
+                    System.out.println(item + " is becoming largest 2.");
                     largest2 = item;
                 }
             }
